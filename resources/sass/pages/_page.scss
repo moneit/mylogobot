@@ -1,0 +1,123 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+// Variables
+@import '../variables';
+
+// Bootstrap
+//@import '~bootstrap/scss/bootstrap';
+
+@import '../bootstrap/functions';
+@import '../bootstrap/variables';
+@import '../bootstrap/mixins';
+@import '../bootstrap/root';
+@import '../bootstrap/reboot';
+@import '../bootstrap/type';
+@import '../bootstrap/grid';
+@import '../bootstrap/forms';
+@import '../bootstrap/buttons';
+@import '../bootstrap/transitions';
+@import '../bootstrap/dropdown';
+@import '../bootstrap/input-group';
+@import '../bootstrap/nav';
+@import '../bootstrap/navbar';
+@import '../bootstrap/card';
+@import '../bootstrap/progress';
+@import '../bootstrap/list-group';
+@import '../bootstrap/modal';
+@import '../bootstrap/spinners';
+@import '../bootstrap/utilities';
+
+// Components
+@import '../components/sidebar';
+@import '../components/login_modal';
+
+// common styles
+@import '../common';
+
+#app {
+  @media (max-width: 767px) {
+    margin-top: calc(3rem + 36px); // 36px is logo height
+  }
+}
+
+nav.navbar.navbar-top {
+  @media (max-width: 767px) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+  }
+
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  .icon-user-o {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    color: $theme-color-primary;
+    width: 1.5rem;
+    text-align: center;
+  }
+
+  .icon-hamburger {
+    font-size: 0.875rem;
+  }
+
+  label {
+    margin: 0;
+  }
+}
+
+footer {
+  background-color: $theme-color-primary-light;
+  padding: 3.75rem 0;
+  text-align: center;
+  color: white;
+
+  form {
+    .btn-start {
+      width: 100%;
+      height: 100%;
+      padding: 12px 0;
+      font-size: 1rem;
+    }
+
+    input.input-theme {
+      color: $body-color;
+    }
+  }
+}
+
+nav.navbar-bottom {
+  background-color: $theme-color-primary;
+  padding: 3.75rem 7.5rem;
+
+  @include media-breakpoint-down(md) {
+    & {
+      padding: 3.75rem;
+
+      .navbar-brand {
+        margin: auto;
+      }
+
+      button.navbar-toggler {
+        display: none;
+      }
+
+      ul.navbar-nav {
+        display: block;
+        li {
+          display: inline-block;
+          width: 50%;
+          float: left;
+        }
+      }
+    }
+  }
+}

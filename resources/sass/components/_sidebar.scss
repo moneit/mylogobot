@@ -1,0 +1,92 @@
+#sidebar-toggle {
+  display: none;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -260px;
+  width: 260px;
+  background-color: #080854;
+  z-index: 1031;
+  transition: all 0.3s ease-in-out;
+
+  input#sidebar-toggle[type=checkbox]:checked ~ & {
+    right: 0;
+    transition-delay: 0.3s;
+  }
+
+  .nav-item {
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        color: #fff;
+        border-color: #fff;
+      }
+    }
+
+    #sidebar-logout-form {
+      button[type=submit] {
+        outline: none;
+      }
+    }
+  }
+
+  ul {
+    padding: 2.5rem 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #122563;
+    }
+  }
+
+  .internal-links-list {
+    text-align: center;
+
+    .nav-item {
+      padding: 0 2.5rem;
+
+      a {
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid transparent;
+
+        &:hover {
+          border-color: #fff;
+        }
+      }
+    }
+  }
+
+  .external-links-list {
+    list-style: none;
+    justify-content: space-around;
+  }
+}
+
+.overlay[for=sidebar-toggle] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1030;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.3s;
+  pointer-events: none;
+}
+
+input#sidebar-toggle[type=checkbox]:checked ~ .overlay[for=sidebar-toggle] {
+  pointer-events: auto;
+  opacity: 1;
+  transition-delay: 0s;
+}

@@ -1,0 +1,62 @@
+#app {
+  @media (max-width: 767px) {
+    & {
+      margin-top: calc(3rem + 34px); // 34px is logo height
+    }
+  }
+}
+
+.navbar.navbar-top {
+  @media (max-width: 767px) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+  }
+
+  @media (min-width: 768px) {
+    &:before {
+      content: "";
+      position: absolute;
+      left: 5.5rem;
+      opacity: 0.5;
+      top: 0;
+      bottom: 0;
+      border-left: 1px solid;
+      color: white;
+    }
+  }
+
+  background-color: $theme-color-primary;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  label.back-link {
+    cursor: pointer;
+    color: white;
+    margin-right: auto;
+    font-size: 2rem;
+    vertical-align: middle;
+    line-height: 1;
+    text-decoration: none;
+
+    @media (min-width: 768px) {
+      & {
+        margin-right: 5rem;
+      }
+    }
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.sidebar-collapse {
+  color: $white;
+}
+
+label {
+  margin: 0;
+}

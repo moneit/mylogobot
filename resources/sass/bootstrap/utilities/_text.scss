@@ -1,0 +1,18 @@
+// stylelint-disable declaration-no-important
+
+//
+// Text
+//
+
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+
+// Transformation
+
+.text-capitalize { text-transform: capitalize !important; }
+
+// Weight and italics
+
+.font-weight-bold    { font-weight: $font-weight-bold !important; }
+
+.text-muted { color: $text-muted !important; }

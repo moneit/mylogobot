@@ -1,0 +1,251 @@
+#login-modal-toggle {
+  display: none;
+}
+
+.login-modal, .reset-password-modal {
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  top: -100vh;
+  pointer-events: none;
+  z-index: 1031;
+  transition: all 0.6s ease-in-out;
+  text-align: center;
+
+  input#login-modal-toggle[type=checkbox]:checked ~ & {
+    top: 0;
+
+    .modal-dialog {
+      transition: opacity 0.3s ease-in-out 0.3s, margin 0.6s ease-in-out 0s;
+      opacity: 1;
+    }
+  }
+
+  .modal-dialog {
+    transition: opacity 0.3s ease-in-out 0s, margin 0.6s ease-in-out 0s;
+    opacity: 0;
+    display: inline-block;
+    vertical-align: middle;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: 0;
+    width: 20rem;
+    background-color: #FFFFFF;
+
+    .modal-content {
+
+      .modal-header {
+        font-size: 2rem;
+        justify-content: center;
+        color: $theme-color-primary;
+        border: none;
+
+        h3 {
+          margin-bottom: 0;
+          margin-top: 0.5rem;
+        }
+      }
+
+      .modal-body {
+        margin-top: -1rem;
+        form {
+          text-align: left;
+        }
+      }
+
+      .modal-footer {
+        justify-content: center;
+        flex-flow: column;
+        border: none;
+        margin-top: -1rem;
+
+        label[for=reset-password-toggle] {
+          margin-bottom: 0;
+          h6 {
+            margin-bottom: 0;
+          }
+        }
+
+        .form-group {
+          & > a:hover {
+            text-decoration: none;
+          }
+        }
+      }
+
+      .buttons-wrapper {
+        width: 100%;
+        margin: 0;
+      }
+
+      .btn {
+        padding: 0.75rem;
+        width: 100%;
+
+        i {
+          margin-right: 0.3rem;
+        }
+      }
+
+      .btn-facebook {
+        background-color: $theme-color-facebook;
+      }
+
+      .abcRioButton {
+        -webkit-border-radius: 0.25rem;
+        border-radius: 0.25rem;
+        -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: background-color .218s,border-color .218s,box-shadow .218s;
+        transition: background-color .218s,border-color .218s,box-shadow .218s;
+        -webkit-user-select: none;
+        -webkit-appearance: none;
+        background-color: #fff;
+        background-image: none;
+        color: #262626;
+        cursor: pointer;
+        outline: none;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: auto;
+
+        .abcRioButtonContentWrapper {
+          height: 100%;
+          width: 100%;
+
+          .abcRioButtonIcon {
+            float: left;
+
+            .abcRioButtonSvg {
+              display: block;
+            }
+          }
+
+          .abcRioButtonContents {
+            font-family: Roboto,arial,sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: .21px;
+            margin-left: 6px;
+            margin-right: 6px;
+            vertical-align: top;
+          }
+        }
+      }
+
+      .abcRioButtonLightBlue {
+        background-color: #fff;
+        color: #757575;
+      }
+
+      .btn-google {
+        background-color: $theme-color-google;
+      }
+
+      .google-button {
+        height: 40px;
+        border-width: 0;
+        background: white;
+        color: #737373;
+        border-radius: 5px;
+        white-space: nowrap;
+        box-shadow: 1px 1px 0 1px rgba(0,0,0,0.05);
+        transition-property: background-color, box-shadow;
+        transition-duration: 150ms;
+        transition-timing-function: ease-in-out;
+        padding: 0;
+
+        &:focus,
+        &:hover {
+          box-shadow: 1px 4px 5px 1px rgba(0,0,0,0.1);
+        }
+
+        &:active {
+          background-color: #e5e5e5;
+          box-shadow: none;
+          transition-duration: 10ms;
+        }
+      }
+
+      .google-button__icon {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 8px 0 8px 8px;
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+      }
+
+      .google-button__icon--plus {
+        width: 27px;
+      }
+
+      .google-button__text {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0 24px;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: 'Roboto',arial,sans-serif;
+      }
+    }
+  }
+}
+
+.overlay[for=login-modal-toggle] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1030;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+input#login-modal-toggle[type=checkbox]:checked ~ .overlay[for=login-modal-toggle] {
+  opacity: 1;
+  transition-delay: 0.3s;
+  pointer-events: auto;
+}
+
+#reset-password-toggle {
+  display: none;
+}
+
+input#reset-password-toggle[type=checkbox]:checked ~ .login-modal {
+
+  .modal-dialog {
+    margin-left: calc(-200vw - 40rem);
+  }
+}
+
+input#reset-password-toggle[type=checkbox] ~ .reset-password-modal {
+
+  .modal-dialog {
+    margin-right: calc(-200vw - 40rem);
+  }
+}
+
+input#reset-password-toggle[type=checkbox]:checked ~ .reset-password-modal {
+
+  .modal-dialog {
+    margin-right: 0;
+  }
+}

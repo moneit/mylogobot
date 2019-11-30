@@ -1,0 +1,45 @@
+
+// Body
+$body-bg: #f8fafc;
+$body-color: #212529;
+
+// Typography
+$font-family-sans-serif: "Nunito", sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66D9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+
+// Theme
+
+$theme-color-primary: #1D1E7A;
+$theme-color-primary-dark: #080854;
+$theme-color-primary-light: #3E3FA0;
+
+$theme-color-secondary: #02DE84;
+$theme-color-secondary-dark: #02B86D;
+$theme-color-secondary-light: #28FFA8;
+
+$theme-color-tertiary: #DB3069;
+$theme-color-tertiary-dark: #990235;
+$theme-color-tertiary-light: #EE7DA3;
+
+$theme-color-grey: #333333;
+$theme-color-grey-light: #ACB4B9;
+
+$theme-color-facebook: #3A5998;
+$theme-color-google: #DD4B39;
+
+$theme-bg-color: #fff;
+$theme-gradient-primary-90: linear-gradient(90deg, $theme-color-primary-dark 0%, $theme-color-primary-light 100%);
+$theme-gradient-secondary-90: linear-gradient(90deg, $theme-color-secondary 0%, $theme-color-secondary-light 100%);

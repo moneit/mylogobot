@@ -1,0 +1,113 @@
+$background-grey: #f8f9f9;
+
+body {
+  background-color: $background-grey;
+}
+
+.comment-wrapper {
+  &.convo {
+    &.bot {
+      margin-right: 33.33%;
+    }
+    &.user {
+      margin-left: 33.33%;
+    }
+  }
+
+  .comment {
+    margin: 0.625rem;
+    padding: 1.25rem;
+    position: relative;
+    border-radius: 10px;
+
+    &.bot {
+      background-color: #FFF;
+      color: #686868;
+      border-top-left-radius: 0 !important;
+      box-shadow: 0.15rem 0.5rem 0.5rem rgba(0, 0, 0, 0.15);
+      width: fit-content;
+
+      &::before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        background-color: #FFF;
+        position: absolute;
+        left: -30px;
+        top: 0;
+
+        //content: "";
+        //width: 0;
+        //height: 0;
+        //position: absolute;
+        //border-left: 10px solid transparent;
+        //border-right: 10px solid#EEE;;
+        //border-top: 10px solid #EEE;;
+        //border-bottom: 10px solid transparent;
+        //left: -20px;
+        //top: 0;
+      }
+
+      &::after {
+        content: '';
+        width: 30px;
+        height: 30px;
+        background-color: $background-grey;
+        position: absolute;
+        left: -30px;
+        top: 0;
+        border-top-right-radius: 15px;
+        -webkit-border-top-right-radius: 15px;
+      }
+    }
+
+    &.user {
+      background: $theme-gradient-primary-90;
+      color: $white;
+      display: inline-block;
+      float: right;
+      border-top-right-radius: 0 !important;
+      box-shadow: -0.15rem 0.5rem 0.5rem rgba(0, 0, 0, 0.15);
+
+      &::before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        background-color: #3E3FA0;
+        position: absolute;
+        right: -30px;
+        top: 0;
+
+        //content: "";
+        //width: 0;
+        //height: 0;
+        //position: absolute;
+        //border: 10px solid;
+        //border-left-color: #3E3FA0;
+        //border-right-color: transparent;
+        //border-top-color: #3E3FA0;
+        //border-bottom-color: transparent;
+        //right: -20px;
+        //top: 0;
+      }
+
+      &::after {
+        content: '';
+        width: 30px;
+        height: 30px;
+        background-color: $background-grey;
+        position: absolute;
+        right: -30px;
+        top: 0;
+        border-top-left-radius: 15px;
+        -webkit-border-top-left-radius: 15px;
+      }
+    }
+  }
+
+  &::after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+}

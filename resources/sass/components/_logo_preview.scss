@@ -1,0 +1,183 @@
+// logo preview start
+
+#preview-toggle {
+  display: none;
+}
+
+.logo-preview-wrapper {
+  position: fixed;
+  top: 20px;
+  bottom: 20px;
+  right: 20px;
+  left: 20px;
+  z-index: 1031;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+  opacity: 0;
+
+  input#preview-toggle[type=checkbox]:checked ~ & {
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+
+.overlay[for=preview-toggle] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1030;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+input#preview-toggle[type=checkbox]:checked ~ .overlay[for=preview-toggle] {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.logo-preview-wrapper {
+  &::-webkit-scrollbar {
+    //width: 0;
+    //background: transparent; /* make scrollbar transparent */
+  }
+
+  &:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  overflow-y: auto;
+
+  label[for=preview-toggle] {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    span {
+      font-size: 2.5rem;
+      cursor: pointer;
+    }
+  }
+
+  .container-fluid {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 15px 30px;
+    background-color: white;
+    position: relative;
+
+    .row .col-md-6 {
+      padding-top: 15px;
+      padding-bottom: 15px;
+
+      .preview {
+        position: relative;
+        padding-top: 62.5%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        .logo-container {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          padding-top: 0;
+
+          > div {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            position: absolute;
+          }
+        }
+      }
+
+      .preview-cards {
+        background-blend-mode: normal, multiply;
+        background-image: url('/img/logo-preview/preview_cards.png'), url('/img/logo-preview/preview_cards_multiply.png');
+
+        .logo-container:first-child {
+          perspective: 500px;
+          > div {
+            transform: rotateX(44deg) rotateY(4deg) rotateZ(-23.5deg);
+            width: 19.5%;
+            top: 24.7%;
+            left: 58.7%;
+            height: 31.2%;
+            padding: 1%;
+            filter: grayscale(1) brightness(0.5);
+          }
+        }
+
+        .logo-container:last-child {
+          perspective: 60px;
+          > div {
+            transform: rotateX(2.2deg) rotateY(-0.8deg) rotateZ(23.6deg);
+            width: 20%;
+            height: 32%;
+            top: 45%;
+            left: 27%;
+            padding: 1%;
+          }
+        }
+      }
+
+      .preview-t-shirt {
+        background-blend-mode: normal, multiply;
+        background-image: url('/img/logo-preview/preview_tshirt.png'), url('/img/logo-preview/preview_tshirt_multiply.png');
+
+        .logo-container {
+          > div {
+            width: 15%;
+            top: 26%;
+            left: 43%;
+            height: 24%;
+          }
+        }
+      }
+
+      .preview-cup {
+        background-blend-mode: normal;
+        background-image: url('/img/logo-preview/preview_cup.png');
+
+        .logo-container {
+          > div {
+            width: 15%;
+            top: 37%;
+            left: 42.5%;
+            height: 24%;
+            filter: grayscale(1) brightness(0.5);
+          }
+        }
+      }
+
+      .preview-billboard {
+        background-blend-mode: normal, multiply;
+        background-image: url('/img/logo-preview/preview_billboard.png'), url('/img/logo-preview/preview_billboard_multiply.png');
+
+        .logo-container {
+          perspective: 2000px;
+          > div {
+            transform: rotateX(9deg) rotateY(-59.5deg) rotateZ(-4deg);
+            width: 35%;
+            top: 18%;
+            left: 27.5%;
+            height: 56%;
+          }
+        }
+      }
+    }
+  }
+
+
+}
+// logo preview end

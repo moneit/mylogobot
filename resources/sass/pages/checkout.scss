@@ -1,0 +1,307 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import '../variables';
+
+// Bootstrap
+//@import '~bootstrap/scss/bootstrap';
+
+@import '../bootstrap/functions';
+@import '../bootstrap/variables';
+@import '../bootstrap/mixins';
+@import '../bootstrap/root';
+@import '../bootstrap/reboot';
+@import '../bootstrap/type';
+@import '../bootstrap/grid';
+@import '../bootstrap/forms';
+@import '../bootstrap/buttons';
+@import '../bootstrap/transitions';
+@import '../bootstrap/dropdown';
+@import '../bootstrap/input-group';
+@import '../bootstrap/nav';
+@import '../bootstrap/navbar';
+@import '../bootstrap/card';
+@import '../bootstrap/progress';
+@import '../bootstrap/list-group';
+@import '../bootstrap/modal';
+@import '../bootstrap/spinners';
+@import '../bootstrap/utilities';
+
+// Components
+@import '../components/header';
+@import '../components/sidebar';
+
+// common styles
+@import '../common';
+
+.bot-comment {
+  @media (max-width: 767px) {
+    padding-top: 0;
+  }
+
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.fill-entire {
+  font-size: 3rem;
+  color: white;
+}
+
+.fill-half {
+  .container {
+    > .row{
+      background-color: white;
+      padding: 30px 0;
+    }
+  }
+}
+
+.checkout-info {
+  > .row {
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 5px 10px;
+  }
+
+  .credit-card-info {
+    .input-theme-stripe {
+
+      position: relative;
+
+      .input-theme {
+        &.StripeElement:not(.empty) {
+          padding: 1.25rem 1.5rem 0.25rem;
+        }
+
+        &.StripeElement.focused {
+          border: 1px solid #3E3FA0;
+        }
+
+        &.StripeElement:not(.empty) + label {
+          font-size: 0.75rem;
+          padding-top: 0.25rem
+        }
+
+        &.StripeElement.invalid {
+          border-color: #dc3545;
+        }
+
+        &.StripeElement.invalid ~ .invalid-feedback {
+          display: block;
+        }
+
+        > div {
+          height: 1.6rem;
+        }
+      }
+
+      label {
+        position: absolute;
+        top: 0;
+        margin: 0;
+        padding: 0.75rem 1.5rem;
+        color: #aaa;
+        border: 3px solid transparent;
+        pointer-events: none;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+      }
+    }
+  }
+
+  .field {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 0 15px;
+
+    &.half-width {
+      width: 50%;
+    }
+
+    &.field.quarter-width {
+      width: calc(25% - 10px);
+    }
+
+    .baseline {
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      left: 0;
+      bottom: 0;
+      background-color: #cfd7df;
+      transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    label {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 8px;
+      color: #cfd7df;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      transform-origin: 0 50%;
+      cursor: text;
+      transition-property: color, transform;
+      transition-duration: 0.3s;
+      transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .input {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      padding-bottom: 7px;
+      color: #32325d;
+      background-color: transparent;
+    }
+
+    .input::-webkit-input-placeholder {
+      color: transparent;
+      transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .input::-moz-placeholder {
+      color: transparent;
+      transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .input:-ms-input-placeholder {
+      color: transparent;
+      transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .input.StripeElement {
+      opacity: 0;
+      transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      will-change: opacity;
+    }
+
+    .input.focused, .input:not(.empty) {
+      opacity: 1;
+    }
+
+    .input.focused::-webkit-input-placeholder, .input:not(.empty)::-webkit-input-placeholder {
+      color: #cfd7df;
+    }
+
+    .input.focused::-moz-placeholder, .input:not(.empty)::-moz-placeholder {
+      color: #cfd7df;
+    }
+
+    .input.focused:-ms-input-placeholder, .input:not(.empty):-ms-input-placeholder {
+      color: #cfd7df;
+    }
+
+    .input.focused + label, .input:not(.empty) + label {
+      color: #aab7c4;
+      transform: scale(0.85) translateY(-25px);
+      cursor: default;
+    }
+
+    .input.focused + label {
+      color: #24b47e;
+    }
+
+    .input.invalid + label {
+      color: #ffa27b;
+    }
+
+    .input.focused + label + .baseline {
+      background-color: #24b47e;
+    }
+
+    .input.focused.invalid + label + .baseline {
+      background-color: #e25950;
+    }
+
+    input, button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      outline: none;
+      border-style: none;
+    }
+
+    input:-webkit-autofill {
+      -webkit-text-fill-color: #e39f48;
+      transition: background-color 100000000s;
+      -webkit-animation: 1ms void-animation-out;
+    }
+
+    .StripeElement--webkit-autofill {
+      background: transparent !important;
+    }
+
+    input, button {
+      -webkit-animation: 1ms void-animation-out;
+    }
+
+    button {
+      display: block;
+      width: calc(100% - 30px);
+      height: 40px;
+      margin: 40px 15px 0;
+      background-color: #24b47e;
+      border-radius: 4px;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    input:active {
+      background-color: #159570;
+    }
+
+    .error svg {
+      margin-top: 0 !important;
+    }
+
+    .error svg .base {
+      fill: #e25950;
+    }
+
+    .error svg .glyph {
+      fill: #fff;
+    }
+
+    .error .message {
+      color: #e25950;
+    }
+
+    .success .icon .border {
+      stroke: #abe9d2;
+    }
+
+    .success .icon .checkmark {
+      stroke: #24b47e;
+    }
+
+    .success .title {
+      color: #32325d;
+      font-size: 16px !important;
+    }
+
+    .success .message {
+      color: #8898aa;
+      font-size: 13px !important;
+    }
+
+    .success .reset path {
+      fill: #24b47e;
+    }
+  }
+}

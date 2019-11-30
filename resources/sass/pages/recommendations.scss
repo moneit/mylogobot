@@ -1,0 +1,311 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import '../variables';
+
+// Bootstrap
+//@import '~bootstrap/scss/bootstrap';
+
+@import '../bootstrap/functions';
+@import '../bootstrap/variables';
+@import '../bootstrap/mixins';
+@import '../bootstrap/root';
+@import '../bootstrap/reboot';
+@import '../bootstrap/type';
+@import '../bootstrap/grid';
+@import '../bootstrap/forms';
+@import '../bootstrap/buttons';
+@import '../bootstrap/transitions';
+@import '../bootstrap/dropdown';
+@import '../bootstrap/input-group';
+@import '../bootstrap/nav';
+@import '../bootstrap/navbar';
+@import '../bootstrap/card';
+@import '../bootstrap/progress';
+@import '../bootstrap/list-group';
+@import '../bootstrap/modal';
+@import '../bootstrap/spinners';
+@import '../bootstrap/utilities';
+
+// from bootstrap and + styles
+@import '../bootstrap';
+
+// Components
+@import '../components/header';
+@import '../components/sidebar';
+@import '../components/login_modal';
+@import '../components/logo_preview';
+
+// common styles
+@import '../common';
+
+.bot-comment {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  @media (max-width: 767px) {
+    & {
+      padding-top: 0;
+    }
+  }
+
+  .bot {
+    width: 100%;
+  }
+
+  .comment-container {
+    padding: 1.25rem;
+    position: relative;
+    top: 10%;
+    border-radius: 0 10px 10px;
+    background-color: #FFF;
+    box-shadow: 0.15rem 0.5rem 0.5rem rgba(0, 0, 0, 0.15);
+
+    .comment {
+      &::before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        background-color: $white;
+        position: absolute;
+        left: -30px;
+        top: 0;
+      }
+
+      &::after {
+        content: '';
+        width: 30px;
+        height: 30px;
+        background-color: $theme-color-primary;
+        position: absolute;
+        left: -30px;
+        top: 0;
+        border-top-right-radius: 15px;
+        -webkit-border-top-right-radius: 15px;
+      }
+    }
+  }
+}
+
+.logo-recommendations {
+
+  .logo-preview-container {
+    width: 100%;
+    position: relative;
+    padding-top: 75%;
+
+    .logo-preview, .logo-saved, .logo-icons, .logo-loader {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    .logo-preview {
+      overflow: hidden;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .logo-saved, .logo-icons {
+      display: none;
+    }
+
+    .logo-loader {
+      background-color: $theme-color-secondary;
+    }
+  }
+
+  .logo-preview-container:hover {
+
+    .logo-preview:not(.preview-fail) {
+
+      & ~ .logo-saved {
+        color: white;
+        display: block;
+        opacity: 0.75;
+        background: linear-gradient(180deg, rgba(29, 30, 122, 0.7) 0%, #1D1E7A 100%);
+
+        i {
+          display: inline-block;
+          font-size: 6rem;
+        }
+      }
+
+      & ~ .logo-icons {
+        display: block;
+
+        .btn-logo {
+          border-radius: 50%;
+          //background-color: #00CF8B;
+          background-color: #FFF;
+          //color: yellow;
+          color: #1D1E7A;
+          //border: 1px solid $theme-color-grey-light;
+          padding: 0.375rem;
+          width: 2.35rem;
+          box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+          cursor: pointer;
+
+          &:hover {
+            background-color: #FFF;
+            color: #02DE84;
+          }
+        }
+
+        .btn-theme {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.signup-form-container {
+  form {
+    width: 100%;
+  }
+
+  button, a {
+    padding: 0.75rem;
+    width: 100%;
+
+    i {
+      margin-right: 0.3rem;
+    }
+  }
+
+  .btn-facebook {
+    background-color: $theme-color-facebook;
+  }
+
+  .btn-google {
+    background-color: $theme-color-google;
+  }
+
+  a.google-login-link {
+    padding: 0;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    .abcRioButton {
+      -webkit-border-radius: 0.25rem;
+      border-radius: 0.25rem;
+      -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-transition: background-color .218s,border-color .218s,box-shadow .218s;
+      transition: background-color .218s,border-color .218s,box-shadow .218s;
+      -webkit-user-select: none;
+      -webkit-appearance: none;
+      background-color: #fff;
+      background-image: none;
+      color: #262626;
+      cursor: pointer;
+      outline: none;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+      width: auto;
+
+      .abcRioButtonContentWrapper {
+        height: 100%;
+        width: 100%;
+
+        .abcRioButtonIcon {
+          float: left;
+
+          .abcRioButtonSvg {
+            display: block;
+          }
+        }
+
+        .abcRioButtonContents {
+          font-family: Roboto,arial,sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          letter-spacing: .21px;
+          margin-left: 6px;
+          margin-right: 6px;
+          vertical-align: top;
+        }
+      }
+    }
+
+    .abcRioButtonLightBlue {
+      background-color: #fff;
+      color: #757575;
+    }
+
+    .btn-google {
+      background-color: $theme-color-google;
+    }
+
+    .google-button {
+      height: 40px;
+      border-width: 0;
+      background: white;
+      color: #737373;
+      border-radius: 5px;
+      white-space: nowrap;
+      box-shadow: 1px 1px 0 1px rgba(0,0,0,0.05);
+      transition-property: background-color, box-shadow;
+      transition-duration: 150ms;
+      transition-timing-function: ease-in-out;
+      padding: 0;
+
+      &:focus,
+      &:hover {
+        box-shadow: 1px 4px 5px 1px rgba(0,0,0,0.1);
+      }
+
+      &:active {
+        background-color: #e5e5e5;
+        box-shadow: none;
+        transition-duration: 10ms;
+      }
+    }
+
+    .google-button__icon {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 8px 0 8px 8px;
+      width: 18px;
+      height: 18px;
+      box-sizing: border-box;
+    }
+
+    .google-button__icon--plus {
+      width: 27px;
+    }
+
+    .google-button__text {
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0 24px;
+      font-size: 14px;
+      font-weight: bold;
+      font-family: 'Roboto',arial,sans-serif;
+    }
+  }
+}
+
+.bot-background-container {
+  background-image: url(/img/bot-signup-new.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-width: 300px;
+  margin-left: -15px;
+}

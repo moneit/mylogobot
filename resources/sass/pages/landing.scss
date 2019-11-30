@@ -1,0 +1,278 @@
+
+@import './page';
+@import '../components/blinking_bot';
+
+.start-form-container {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  color: $theme-color-primary;
+  padding-top: 5%;
+  padding-bottom: 5%;
+
+  .company-name-form {
+    width: 100%;
+
+    h1 {
+      margin-bottom: 1rem;
+      font-size: 36px;
+      font-weight: normal;
+      line-height: 44px;
+
+      @include media-breakpoint-up(md) {
+        & {
+          margin-right: -6rem;
+          margin-bottom: 2rem;
+          font-size: 68px;
+          font-weight: normal;
+          line-height: 83px;
+        }
+      }
+    }
+
+    h2 {
+      margin-bottom: 1.25rem;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 27px;
+
+      @include media-breakpoint-up(md) {
+        & {
+          margin-right: -4rem;
+          margin-bottom: 2.5rem;
+          font-size: 26px;
+          font-weight: normal;
+          line-height: 32px;
+        }
+      }
+    }
+
+    .form-input {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+
+      &.red {
+        i {
+          color: #FF5F56;
+        }
+
+        input {
+          border-color: #FF5F56;
+        }
+
+        & + .input-helper {
+          visibility: visible;
+          @include media-breakpoint-down(md) {
+            display: block;
+          }
+        }
+      }
+
+      &.green {
+        i {
+          color: #00BD57;
+        }
+
+        input {
+          border-color: #00BD57;
+        }
+      }
+
+      i {
+        font-size: 32px;
+        color: #ECECEC;
+      }
+
+      input {
+        font-size: 14px;
+        width: calc(100% - 24px);
+      }
+
+      button {
+        width: 100%;
+        height: 100%;
+        padding: 12px;
+      }
+    }
+    .input-helper {
+      visibility: hidden;
+      margin-left: 16px;
+      color: #FF5F56;
+      font-size: 12px;
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
+  }
+}
+
+.bot-container {
+  position: relative;
+  padding-bottom: 100%;
+  background: url(/img/landing/shapebehindbot.png) no-repeat;
+  background-size: contain;
+}
+
+.bot {
+  position: absolute;
+  width: 50%;
+  top: 10%;
+  left: 30%;
+}
+
+.section-top {
+  margin-bottom: 8rem;
+}
+
+section#testimonials {
+  > div {
+    background-color: $theme-color-primary;
+    color: $white;
+    padding: 3rem;
+    margin-bottom: 15rem;
+  }
+
+  .testimonials-desktop {
+    @media (max-width: 1199px) {
+      margin-bottom: 0;
+    }
+  }
+
+  .testimonials-mobile {
+    @media (max-width: 576px) {
+      margin-bottom: 20rem;
+    }
+  }
+
+  .container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    h2 {
+      font-weight: normal;
+      font-size: 42px;
+      line-height: 51px;
+    }
+
+    .testimonials-container {
+      position: absolute;
+      width: calc(100% - 30px);
+    }
+
+    .separator {
+      width: 75px;
+      height: 5px;
+    }
+  }
+}
+
+section#samples {
+  h2 {
+    font-weight: normal;
+    font-size: 42px;
+    line-height: 51px;
+  }
+  h3 {
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 32px;
+    color: $theme-color-grey-light;
+  }
+  .separator {
+    width: 75px;
+    height: 5px;
+    margin: auto;
+  }
+  .container-fluid {
+    margin-top: 3rem;
+
+    .col-md-3 {
+      padding: 0;
+    }
+    .sample-logo {
+      padding-bottom: 75%;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+section#steps {
+  h2 {
+    font-weight: normal;
+    font-size: 42px;
+    line-height: 51px;
+  }
+  h3 {
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 32px;
+    color: $theme-color-grey-light;
+  }
+  .separator {
+    width: 75px;
+    height: 5px;
+    margin: auto;
+  }
+  .container {
+    margin-top: 3rem;
+
+    .col-md-4 {
+      padding-left: 8.33%;
+      padding-right: 8.33%;
+
+      img {
+        max-width: 100%;
+      }
+
+      p {
+        color: #374047;
+      }
+
+      img, h3, p {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+section#delivered {
+  h2 {
+    font-weight: 500;
+    font-size: 68px;
+    line-height: 83px;
+  }
+  h3 {
+    font-weight: normal;
+    font-size: 42px;
+    line-height: 51px;
+  }
+  .separator {
+    width: 150px;
+    height: 5px;
+    margin: auto;
+  }
+  p {
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 32px;
+  }
+}
+
+section#info {
+  .container {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    .col-md-4 {
+
+      img, h3, p {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

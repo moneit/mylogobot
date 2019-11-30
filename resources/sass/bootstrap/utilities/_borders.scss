@@ -1,0 +1,32 @@
+// stylelint-disable property-blacklist, declaration-no-important
+
+//
+// Border
+//
+
+.border         { border: $border-width solid $border-color !important; }
+
+.border-0        { border: 0 !important; }
+
+@each $color, $value in $theme-colors {
+  .border-#{$color} {
+    border-color: $value !important;
+  }
+}
+
+//
+// Border-radius
+//
+
+
+.rounded {
+  border-radius: $border-radius !important;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.rounded-pill {
+  border-radius: $rounded-pill !important;
+}

@@ -1,0 +1,187 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import '../variables';
+
+// Bootstrap
+//@import '~bootstrap/scss/bootstrap';
+
+@import '../bootstrap/functions';
+@import '../bootstrap/variables';
+@import '../bootstrap/mixins';
+@import '../bootstrap/root';
+@import '../bootstrap/reboot';
+@import '../bootstrap/type';
+@import '../bootstrap/grid';
+@import '../bootstrap/forms';
+@import '../bootstrap/buttons';
+@import '../bootstrap/transitions';
+@import '../bootstrap/dropdown';
+@import '../bootstrap/input-group';
+@import '../bootstrap/nav';
+@import '../bootstrap/navbar';
+@import '../bootstrap/card';
+@import '../bootstrap/progress';
+@import '../bootstrap/list-group';
+@import '../bootstrap/modal';
+@import '../bootstrap/spinners';
+@import '../bootstrap/utilities';
+
+// Components
+@import '../components/header';
+@import '../components/sidebar';
+
+// common styles
+@import '../common';
+
+.bot-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .bot {
+    width: 100%;
+  }
+}
+
+.signup-form-container {
+  form {
+    width: 100%;
+  }
+
+  button, a {
+    padding: 0.75rem;
+    width: 100%;
+
+    i {
+      margin-right: 0.3rem;
+    }
+  }
+
+  .btn-facebook {
+    background-color: $theme-color-facebook;
+  }
+
+  .btn-google {
+    background-color: $theme-color-google;
+  }
+
+  a.google-login-link {
+    padding: 0;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    .abcRioButton {
+      -webkit-border-radius: 0.25rem;
+      border-radius: 0.25rem;
+      -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-transition: background-color .218s,border-color .218s,box-shadow .218s;
+      transition: background-color .218s,border-color .218s,box-shadow .218s;
+      -webkit-user-select: none;
+      -webkit-appearance: none;
+      background-color: #fff;
+      background-image: none;
+      color: #262626;
+      cursor: pointer;
+      outline: none;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+      width: auto;
+
+      .abcRioButtonContentWrapper {
+        height: 100%;
+        width: 100%;
+
+        .abcRioButtonIcon {
+          float: left;
+
+          .abcRioButtonSvg {
+            display: block;
+          }
+        }
+
+        .abcRioButtonContents {
+          font-family: Roboto,arial,sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          letter-spacing: .21px;
+          margin-left: 6px;
+          margin-right: 6px;
+          vertical-align: top;
+        }
+      }
+    }
+
+    .abcRioButtonLightBlue {
+      background-color: #fff;
+      color: #757575;
+    }
+
+    .btn-google {
+      background-color: $theme-color-google;
+    }
+
+    .google-button {
+      height: 40px;
+      border-width: 0;
+      background: white;
+      color: #737373;
+      border-radius: 5px;
+      white-space: nowrap;
+      box-shadow: 1px 1px 0 1px rgba(0,0,0,0.05);
+      transition-property: background-color, box-shadow;
+      transition-duration: 150ms;
+      transition-timing-function: ease-in-out;
+      padding: 0;
+
+      &:focus,
+      &:hover {
+        box-shadow: 1px 4px 5px 1px rgba(0,0,0,0.1);
+      }
+
+      &:active {
+        background-color: #e5e5e5;
+        box-shadow: none;
+        transition-duration: 10ms;
+      }
+    }
+
+    .google-button__icon {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 8px 0 8px 8px;
+      width: 18px;
+      height: 18px;
+      box-sizing: border-box;
+    }
+
+    .google-button__icon--plus {
+      width: 27px;
+    }
+
+    .google-button__text {
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0 24px;
+      font-size: 14px;
+      font-weight: bold;
+      font-family: 'Roboto',arial,sans-serif;
+    }
+  }
+}
+
+.right-comment {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
