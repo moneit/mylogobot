@@ -16,7 +16,7 @@ class CreateLogoIconsTable extends Migration
         Schema::create('logo_icons', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('logo_id');
-            $table->json('tags');
+            $table->text('tags');
             $table->smallInteger('min_x');
             $table->smallInteger('min_y');
             $table->smallInteger('max_x');

@@ -101,32 +101,16 @@
             <div class="separator background-secondary my-3"></div>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="sample-logo" style="background-image: url(/img/landing/checkmate.svg)"></div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="sample-logo" style="background-image: url(/img/landing/sportsmart.svg)"></div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="sample-logo" style="background-image: url(/img/landing/hurricanes.svg)"></div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="sample-logo" style="background-image: url(/img/landing/naturay.svg)"></div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="sample-logo" style="background-image: url(/img/landing/south_bay.svg)"></div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="sample-logo" style="background-image: url(/img/landing/mr.noce.svg)"></div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="sample-logo" style="background-image: url(/img/landing/tagus_tour.svg)"></div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="sample-logo" style="background-image: url(/img/landing/pet_spa.svg)"></div>
+                    <div class="col-md-3" v-for="(path, idx) in goodLogoPaths" :key="idx" @click="openGoodLogoModal(path)">
+                        <div class="sample-logo" :style="`background-image: url(${path})`"></div>
                     </div>
                 </div>
             </div>
+            <good-logos-modal
+                    :open="showGoodLogoModal"
+                    :img-path="selectedLogoPath"
+                    @update-open="updateShowGoodLogoModal"
+            ></good-logos-modal>
         </section>
 
         <section id="steps" class="p-5 text-center">
@@ -184,7 +168,7 @@
 
         <section id="delivered" class="background-primary p-5 color-white text-center">
             <h2>
-                275
+                10.275
             </h2>
             <h3>
                 Logos delivered
@@ -193,6 +177,32 @@
             <p>
                 We deliver much more than what a logo designer would
             </p>
+        </section>
+
+        <section id="mockup">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 order-md-last">
+                        <h2 class="color-primary">
+                            Let’s create your brand new logo today!
+                        </h2>
+                        <h3>
+                            What is your company name?
+                        </h3>
+                        <div class="row form-group mb-0">
+                            <div class="col-lg-8 mb-3 form-input">
+                                <input class="input-theme" placeholder="Your company name" v-model="companyName" ref="input"/>
+                            </div>
+                            <div class="col-lg-4 mb-3 form-input">
+                                <button class="btn btn-theme gradient-secondary-90" @click.prevent="startConversation">Make my logo!</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="w-100" src="/img/landing/mockup.png" />
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="info" class="p-5">

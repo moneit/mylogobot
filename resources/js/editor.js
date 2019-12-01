@@ -69,6 +69,10 @@ const app = new Vue({
         this.$store.dispatch('cloneSettings', storedLogoSettings);
         this.storeHistoryData(storedLogoSettings);
         lsHelper.remove('logoSettings');
+
+        this.$store.dispatch('initFont');
+        this.$store.dispatch('initPalette');
+        this.$store.dispatch('container/initContainers');
       } else {
         let downloadSettings = lsHelper.get('downloadSettings');
 
@@ -78,16 +82,13 @@ const app = new Vue({
           })
             .then(res => {
               if (res.status === 'success') {
-                this.renderPreview(res.payload);
+                this.$store.dispatch('applySettings', res.payload);
+                lsHelper.remove('downloadSettings');
               }
             });
         }
       }
     }
-
-    this.$store.dispatch('initFont');
-    this.$store.dispatch('initPalette');
-    this.$store.dispatch('container/initContainers');
   },
   data() {
     return {
@@ -105,8 +106,7 @@ const app = new Vue({
       showErrorMessageModal: false,
       errorMessage: '',
       showSuccessMessageModal: false,
-      successMessage: '',
-      previewRendering: false,
+      successMessage: ''
     }
   },
 
@@ -252,9 +252,6 @@ const app = new Vue({
     showSuccessMessage(message) {
       this.successMessage = message;
       this.updateShowSuccessMessageModal(true);
-    },
-    renderPreview() {
-      this.previewRendering = true;
     },
   },
   watch: {

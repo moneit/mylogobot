@@ -22,6 +22,7 @@ window.Vue = require('vue');
 
 Vue.component('form-input', require('./components/FormInput.vue').default);
 Vue.component('carousel', require('./components/Carousel.vue').default);
+Vue.component('good-logos-modal', require('./components/GoodLogosModal.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -51,6 +52,18 @@ const app = new Vue({
         {description: '“I was looking for a professional logo design, but then I found out that Logo.bot could get me a logo with their AI. I didn’t buy this idea immediately, but within 5 minutes, I had my brand ready for my product”', author: "Xavier, Amazing Safari"},
         {description: '“We have spent 500$ with a designer who didn’t deliver anything after 4 weeks. Then we discovered Logo.Bot and our logos were done in few minutes for a fraction of the price. The next day I’ve printed my business cards and my business was running. If you need a cheap logo with top quality, that’s Logo.Bot.”', author: "Sara, Star Expeditions"},
       ],
+      goodLogoPaths: [
+        '/img/landing/checkmate.svg',
+        '/img/landing/sportsmart.svg',
+        '/img/landing/hurricanes.svg',
+        '/img/landing/naturay.svg',
+        '/img/landing/south_bay.svg',
+        '/img/landing/mr.noce.svg',
+        '/img/landing/tagus_tour.svg',
+        '/img/landing/pet_spa.svg',
+      ],
+      showGoodLogoModal: false,
+      selectedLogoPath: '',
     }
   },
   mounted() {
@@ -73,6 +86,13 @@ const app = new Vue({
           this.inputClass = 'red';
         });
       }
+    },
+    openGoodLogoModal(path) {
+      this.showGoodLogoModal = true;
+      this.selectedLogoPath = path;
+    },
+    updateShowGoodLogoModal(value) {
+      this.showGoodLogoModal = value;
     }
   }
 });

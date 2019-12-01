@@ -205,12 +205,10 @@ class ProductService
                 $svg = $logo->symbol_only_svg;
             } else {
                 $svg = $logo->svg;
-            }\Log::error('svg before', [$svg]);
+            }
 
             $svg = preg_replace('/<pattern id="watermark-pattern".*?><\/pattern>/i', '', $svg, 1); // remove watermark pattern from svg
             $svg = preg_replace('/<rect id="watermark".*?><\/rect>/i', '', $svg, 1); // remove watermark from svg
-
-            \Log::error('svg after', [$svg]);
 
             if (isset($option['background']) && $option['background']) {
                 // do nothing

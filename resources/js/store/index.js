@@ -423,6 +423,44 @@ export const actions = {
     });
   },
 
+  applySettings ({ dispatch, getters }, payload) {
+    console.log('applySettings', payload);
+    dispatch('cloneSettings', payload);
+
+    if (payload.companyNameSettings.font.id) {
+      dispatch('companyName/updateFontBounds');
+      dispatch('companyName/updateFontAdvX');
+      dispatch('companyName/updatePaths');
+    }
+
+    if (payload.sloganSettings.font.id) {
+      dispatch('slogan/updateFontBounds');
+      dispatch('slogan/updateFontAdvX');
+      dispatch('slogan/updatePaths');
+    }
+
+    if (getters['symbol/type'].label === 'Initials') {
+      if (payload.symbolSettings.font.id) {
+        dispatch('symbol/updateFontBounds');
+        dispatch('symbol/updateFontAdvX');
+        dispatch('symbol/updatePaths');
+      }
+    } else {
+      dispatch('symbol/updateIconWidth', Math.abs(payload.symbolSettings.iconBounds['maxX'] - payload.symbolSettings.iconBounds['minX']));
+      dispatch('symbol/updateIconHeight', Math.abs(payload.symbolSettings.iconBounds['maxY'] - payload.symbolSettings.iconBounds['minY']));
+      dispatch('symbol/updateIconScale', (state.symbol.iconHeight === 0) ? 1 : (Math.min(1024 / state.symbol.iconWidth, 768 / state.symbol.iconHeight) * state.symbol.iconSize / 100));
+      dispatch('symbol/updateInitialsWidth', payload.symbolSettings.paths.reduce((width, path, idx) => { width += path['horiz-adv-x']; if (idx > 0) { width += this.fontAdvX * this.letterSpace / 100; } return width;}, 0));
+      dispatch('symbol/updateInitialsHeight', payload.symbolSettings.fontBounds['maxY'] - payload.symbolSettings.fontBounds['minY']);
+
+      let viewY = (!isNaN(this.fontBounds['maxY']) && !isNaN(this.fontBounds['minY'])) ? (payload.symbolSettings.fontBounds['maxY'] - payload.symbolSettings.fontBounds['minY']) : 0;
+      dispatch('symbol/updateInitialsScale', (viewY === 0) ? 1 : 768 / viewY * payload.symbolSettings.fontSize / 100);
+    }
+
+    if (payload.containerSettings.id) {
+      dispatch('container/updateSelected', payload.containerSettings);
+    }
+  },
+
   retrieveLogoInfo ({ commit, getters, dispatch }) {
     return new Promise((resolve, reject) => {
       let logoInfo = lsHelper.get('logoInfo');

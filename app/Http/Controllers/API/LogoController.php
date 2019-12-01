@@ -303,7 +303,7 @@ class LogoController extends Controller
             ];
 
             $icon = $logo->icon;
-            $initials = $logo->initial;
+            $initials = $logo->initials;
             $state['symbolSettings'] = [
                 'types' => [
                     [
@@ -523,7 +523,7 @@ class LogoController extends Controller
             ];
 
             $icon = $logo->icon;
-            $initials = $logo->initial;
+            $initials = $logo->initials;
             $state['symbolSettings'] = [
                 'types' => [
                     [
